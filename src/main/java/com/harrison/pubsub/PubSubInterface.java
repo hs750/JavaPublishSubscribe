@@ -1,6 +1,7 @@
 package com.harrison.pubsub;
 
 import java.util.HashMap;
+import java.util.List;
 
 public abstract class PubSubInterface {
     private static HashMap<Class<?>, PubSubManager> pubSubManagers = new HashMap<>();
@@ -12,6 +13,10 @@ public abstract class PubSubInterface {
 
     public PubSubInterface(boolean allowPublishLoopback){
         this.allowPublishLoopback = allowPublishLoopback;
+    }
+
+    public PubSubInterface(List<String> args){
+        allowPublishLoopback = args.contains("-l");
     }
 
     public void subscribe(Class<?> clazz){

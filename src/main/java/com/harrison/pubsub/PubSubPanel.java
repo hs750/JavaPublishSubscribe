@@ -12,6 +12,8 @@ public abstract class PubSubPanel extends JPanel{
         }
     };
 
+    //TODO allowPublishLoopback constructors
+
     public void subscribe(Class<?> clazz){
         psi.subscribe(clazz);
     }
