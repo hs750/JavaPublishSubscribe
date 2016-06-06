@@ -1,9 +1,12 @@
 package com.harrison.pubsub;
 
+import com.harrison.pubsub.interfaces.Publisher;
+import com.harrison.pubsub.interfaces.Subscriber;
+
 import java.util.HashMap;
 import java.util.List;
 
-public abstract class PubSubInterface {
+public abstract class PubSubInterface implements Publisher, Subscriber{
     private static HashMap<Class<?>, PubSubManager> pubSubManagers = new HashMap<>();
     private boolean allowPublishLoopback;
 
