@@ -1,6 +1,5 @@
-package com.harrison.pubsub.interfaces;
+package com.harrison.pubsub;
 
 public interface Publisher {
-    void publish(Object data);
     boolean isPublishLoopbackAllowed();
 }
