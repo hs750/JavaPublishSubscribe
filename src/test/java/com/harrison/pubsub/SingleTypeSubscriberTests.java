@@ -8,13 +8,13 @@ import static org.mockito.Mockito.*;
 
 public class SingleTypeSubscriberTests {
 
-    @Test
-    public void testCallbackCalledOnReceive(){
-        TestingCallback callback = mock(TestingCallback.class);
-        SingleTypeSubscriber sts = new SingleTypeSubscriber(callback);
+  @Test
+  public void testCallbackCalledOnReceive() {
+    TestingCallback callback = mock(TestingCallback.class);
+    SingleTypeSubscriber sts = new SingleTypeSubscriber(callback);
 
-        sts.receive("Test Data");
+    sts.receive("Test Data");
 
-        verify(callback, times(1)).callback("Test Data");
-    }
+    verify(callback, times(1)).callback("Test Data");
+  }
 }

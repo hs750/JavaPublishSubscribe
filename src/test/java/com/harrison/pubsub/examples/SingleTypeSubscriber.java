@@ -5,13 +5,14 @@ import com.harrison.pubsub.helpers.TestingCallback;
 
 public class SingleTypeSubscriber implements Subscriber<String> {
 
-    private TestingCallback callback;
+  private TestingCallback callback;
 
-    public SingleTypeSubscriber(TestingCallback callback) {
-        this.callback = callback;
-    }
+  public SingleTypeSubscriber(TestingCallback callback) {
+    this.callback = callback;
+  }
 
-    @Override public void receive(String data) {
-        this.callback.callback(data);
-    }
+  @Override
+  public void receive(String data) {
+    this.callback.callback(data);
+  }
 }
