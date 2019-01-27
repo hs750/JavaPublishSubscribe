@@ -17,4 +17,14 @@ public class SingleTypeSubscriberTests {
 
     verify(callback, times(1)).callback("Test Data");
   }
+
+  @Test
+  public void testCallbackCalledOnReceiveFromPublish() {
+    TestingCallback callback = mock(TestingCallback.class);
+    SingleTypeSubscriber sts = new SingleTypeSubscriber(callback);
+
+    PublishSubscribeService.publish("Test Data", () -> true);
+
+    verify(callback, times(1)).callback("Test Data");
+  }
 }
