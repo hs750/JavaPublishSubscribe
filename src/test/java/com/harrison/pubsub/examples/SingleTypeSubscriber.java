@@ -4,6 +4,9 @@ import com.harrison.pubsub.PublishSubscribeService;
 import com.harrison.pubsub.Subscriber;
 import com.harrison.pubsub.helpers.TestingCallback;
 
+/**
+ * An example of subscribing to a single type (in this case {@link String}).
+ */
 public class SingleTypeSubscriber implements Subscriber<String> {
 
   private TestingCallback callback;
@@ -18,6 +21,9 @@ public class SingleTypeSubscriber implements Subscriber<String> {
     this.callback.callback(data);
   }
 
+  /**
+   * Subscribe to data using {@link PublishSubscribeService#subscribe(Subscriber, Class)}.
+   */
   private void subscribe() {
     PublishSubscribeService.subscribe(this, String.class);
   }

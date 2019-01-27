@@ -6,7 +6,6 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.harrison.pubsub.examples.PublishSubscriber;
 import org.junit.Test;
 
 public class PublishSubscribeServiceTests {
