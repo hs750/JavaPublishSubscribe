@@ -9,15 +9,15 @@ import static org.mockito.Mockito.when;
 import com.harrison.pubsub.examples.PublishSubscriber;
 import org.junit.Test;
 
-public class PublishSubscribeManagerTests {
+public class SubscriptionManagerTests {
 
   @Test
   public void testBroadcastNoSubscribers() {
     Publisher publisher = mock(Publisher.class);
 
-    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>();
+    SubscriptionManager<String> sm = new SubscriptionManager<>();
 
-    psm.broadcastData("Test Data", publisher);
+    sm.broadcastData("Test Data", publisher);
 
     verify(publisher, times(0)).isPublishLoopbackAllowed();
   }
@@ -28,10 +28,10 @@ public class PublishSubscribeManagerTests {
     Publisher publisher = mock(Publisher.class);
     Subscriber<String> subscriber = mock(Subscriber.class);
 
-    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>();
-    psm.addSubscriber(subscriber);
+    SubscriptionManager<String> sm = new SubscriptionManager<>();
+    sm.addSubscriber(subscriber);
 
-    psm.broadcastData("Test Data", publisher);
+    sm.broadcastData("Test Data", publisher);
 
     verify(publisher, times(0)).isPublishLoopbackAllowed();
     verify(subscriber, times(1)).receive("Test Data");
@@ -44,11 +44,11 @@ public class PublishSubscribeManagerTests {
     Subscriber<String> subscriber1 = mock(Subscriber.class);
     Subscriber<String> subscriber2 = mock(Subscriber.class);
 
-    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>();
-    psm.addSubscriber(subscriber1);
-    psm.addSubscriber(subscriber2);
+    SubscriptionManager<String> sm = new SubscriptionManager<>();
+    sm.addSubscriber(subscriber1);
+    sm.addSubscriber(subscriber2);
 
-    psm.broadcastData("Test Data", publisher);
+    sm.broadcastData("Test Data", publisher);
 
     verify(publisher, times(0)).isPublishLoopbackAllowed();
     verify(subscriber1, times(1)).receive("Test Data");
@@ -61,10 +61,10 @@ public class PublishSubscribeManagerTests {
     PublishSubscriber<String> publishSubscriber = mock(PublishSubscriber.class);
     when(publishSubscriber.isPublishLoopbackAllowed()).thenReturn(false);
 
-    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>();
-    psm.addSubscriber(publishSubscriber);
+    SubscriptionManager<String> sm = new SubscriptionManager<>();
+    sm.addSubscriber(publishSubscriber);
 
-    psm.broadcastData("Test Data", publishSubscriber);
+    sm.broadcastData("Test Data", publishSubscriber);
 
     verify(publishSubscriber, times(1)).isPublishLoopbackAllowed();
     verify(publishSubscriber, times(0)).receive(anyString());
@@ -76,10 +76,10 @@ public class PublishSubscribeManagerTests {
     PublishSubscriber<String> publishSubscriber = mock(PublishSubscriber.class);
     when(publishSubscriber.isPublishLoopbackAllowed()).thenReturn(true);
 
-    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>();
-    psm.addSubscriber(publishSubscriber);
+    SubscriptionManager<String> sm = new SubscriptionManager<>();
+    sm.addSubscriber(publishSubscriber);
 
-    psm.broadcastData("Test Data", publishSubscriber);
+    sm.broadcastData("Test Data", publishSubscriber);
 
     verify(publishSubscriber, times(1)).isPublishLoopbackAllowed();
     verify(publishSubscriber, times(1)).receive("Test Data");
