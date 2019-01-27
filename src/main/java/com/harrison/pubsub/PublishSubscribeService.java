@@ -1,10 +1,11 @@
 package com.harrison.pubsub;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public final class PublishSubscribeService {
 
-  private static HashMap<Class<?>, PublishSubscribeManager<?>> publishSubscribeManagers =
+  private static Map<Class<?>, PublishSubscribeManager<?>> publishSubscribeManagers =
       new HashMap<>();
 
   @SuppressWarnings("unchecked")
@@ -22,9 +23,12 @@ public final class PublishSubscribeService {
   @SuppressWarnings("unchecked")
   public static <T> void publish(T data, Publisher publisher) {
     Class<?> dataClass = data.getClass();
-    PublishSubscribeManager psm = publishSubscribeManagers.get(dataClass);
-    if (psm != null) {
-      psm.broadcastData(data, publisher);
+    while (dataClass != null) {
+      PublishSubscribeManager psm = publishSubscribeManagers.get(dataClass);
+      if (psm != null) {
+        psm.broadcastData(data, publisher);
+      }
+      dataClass = dataClass.getSuperclass();
     }
   }
 

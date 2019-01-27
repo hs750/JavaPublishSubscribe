@@ -1,11 +1,12 @@
 package com.harrison.pubsub;
 
 import java.util.HashSet;
+import java.util.Set;
 
 final class PublishSubscribeManager<T> {
 
-  private HashSet<Subscriber<T>> subscribers = new HashSet<>();
-  
+  private Set<Subscriber<T>> subscribers = new HashSet<>();
+
   void addSubscriber(Subscriber<T> subscriber) {
     subscribers.add(subscriber);
   }
