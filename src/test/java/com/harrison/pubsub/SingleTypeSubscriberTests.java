@@ -21,7 +21,7 @@ public class SingleTypeSubscriberTests {
   @Test
   public void testCallbackCalledOnReceiveFromPublish() {
     TestingCallback callback = mock(TestingCallback.class);
-    SingleTypeSubscriber sts = new SingleTypeSubscriber(callback);
+    new SingleTypeSubscriber(callback);
 
     PublishSubscribeService.publish("Test Data", () -> true);
 

@@ -18,7 +18,7 @@ public class SingleTypeSubscriber implements Subscriber<String> {
     this.callback.callback(data);
   }
 
-  private void subscribe(){
+  private void subscribe() {
     PublishSubscribeService.subscribe(this, String.class);
   }
 }
