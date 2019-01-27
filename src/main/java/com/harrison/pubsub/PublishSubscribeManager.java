@@ -4,13 +4,8 @@ import java.util.HashSet;
 
 final class PublishSubscribeManager<T> {
 
-  private Class<T> manages;
   private HashSet<Subscriber<T>> subscribers = new HashSet<>();
-
-  PublishSubscribeManager(Class<T> clazz) {
-    manages = clazz;
-  }
-
+  
   void addSubscriber(Subscriber<T> subscriber) {
     subscribers.add(subscriber);
   }

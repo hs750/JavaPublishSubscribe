@@ -11,7 +11,7 @@ public class PublishSubscribeManagerTests {
   public void testBroadcastNoSubscribers() {
     Publisher publisher = mock(Publisher.class);
 
-    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>(String.class);
+    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>();
 
     psm.broadcastData("Test Data", publisher);
 
@@ -24,7 +24,7 @@ public class PublishSubscribeManagerTests {
     Publisher publisher = mock(Publisher.class);
     Subscriber<String> subscriber = mock(Subscriber.class);
 
-    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>(String.class);
+    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>();
     psm.addSubscriber(subscriber);
 
     psm.broadcastData("Test Data", publisher);
@@ -40,7 +40,7 @@ public class PublishSubscribeManagerTests {
     Subscriber<String> subscriber1 = mock(Subscriber.class);
     Subscriber<String> subscriber2 = mock(Subscriber.class);
 
-    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>(String.class);
+    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>();
     psm.addSubscriber(subscriber1);
     psm.addSubscriber(subscriber2);
 
@@ -57,7 +57,7 @@ public class PublishSubscribeManagerTests {
     PublishSubscriber<String> publishSubscriber = mock(PublishSubscriber.class);
     when(publishSubscriber.isPublishLoopbackAllowed()).thenReturn(false);
 
-    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>(String.class);
+    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>();
     psm.addSubscriber(publishSubscriber);
 
     psm.broadcastData("Test Data", publishSubscriber);
@@ -72,7 +72,7 @@ public class PublishSubscribeManagerTests {
     PublishSubscriber<String> publishSubscriber = mock(PublishSubscriber.class);
     when(publishSubscriber.isPublishLoopbackAllowed()).thenReturn(true);
 
-    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>(String.class);
+    PublishSubscribeManager<String> psm = new PublishSubscribeManager<>();
     psm.addSubscriber(publishSubscriber);
 
     psm.broadcastData("Test Data", publishSubscriber);

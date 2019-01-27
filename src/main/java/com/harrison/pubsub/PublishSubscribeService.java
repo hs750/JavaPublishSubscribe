@@ -1,7 +1,5 @@
 package com.harrison.pubsub;
 
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.util.HashMap;
 
 public final class PublishSubscribeService {
@@ -10,12 +8,13 @@ public final class PublishSubscribeService {
       new HashMap<>();
 
   @SuppressWarnings("unchecked")
-  public static <T> void subscribe(Subscriber<T> subscriber) {
-    Type subscribedType = subscriber.getClass().getGenericSuperclass();
-    Class<T> subscribedClass = (Class<T>) ((ParameterizedType) subscribedType)
-        .getActualTypeArguments()[0];
+  public static <T> void subscribe(Subscriber<T> subscriber, Class<T> subscribedClass) {
     PublishSubscribeManager<T> manager = (PublishSubscribeManager<T>) publishSubscribeManagers
-        .getOrDefault(subscribedClass, new PublishSubscribeManager(subscribedClass));
+        .get(subscribedClass);
+    if (manager == null) {
+      manager = new PublishSubscribeManager<>();
+      publishSubscribeManagers.put(subscribedClass, manager);
+    }
     manager.addSubscriber(subscriber);
   }
 
