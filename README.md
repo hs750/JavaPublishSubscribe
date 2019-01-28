@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hs750/JavaPublishSubscribe.svg?branch=master)](https://travis-ci.org/hs750/JavaPublishSubscribe)
+
 # JavaPublishSubscribe
 
 A lightweight, pure java publish-subscribe framework. A simple API allows objects within an application using this framework to synchronously publish and subscribe to any Java type. 
