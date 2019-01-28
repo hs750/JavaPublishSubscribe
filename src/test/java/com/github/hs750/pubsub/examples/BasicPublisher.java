@@ -1,7 +1,7 @@
-package com.harrison.pubsub.examples;
+package com.github.hs750.pubsub.examples;
 
-import com.harrison.pubsub.PublishSubscribeService;
-import com.harrison.pubsub.Publisher;
+import com.github.hs750.pubsub.PublishSubscribeService;
+import com.github.hs750.pubsub.Publisher;
 
 /**
  * An example of a class implementing {@link Publisher} that uses the {@link

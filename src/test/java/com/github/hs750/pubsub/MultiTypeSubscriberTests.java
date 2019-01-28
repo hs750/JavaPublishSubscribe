@@ -1,12 +1,11 @@
-package com.harrison.pubsub;
+package com.github.hs750.pubsub;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-import com.harrison.pubsub.examples.MultiTypeSubscriber;
-import com.harrison.pubsub.examples.SingleTypeSubscriber;
-import com.harrison.pubsub.helpers.TestingCallback;
+import com.github.hs750.pubsub.examples.MultiTypeSubscriber;
+import com.github.hs750.pubsub.helpers.TestingCallback;
 import org.junit.Test;
 
 public class MultiTypeSubscriberTests {

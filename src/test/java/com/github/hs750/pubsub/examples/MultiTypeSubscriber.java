@@ -1,12 +1,12 @@
-package com.harrison.pubsub.examples;
+package com.github.hs750.pubsub.examples;
 
-import com.harrison.pubsub.PublishSubscribeService;
-import com.harrison.pubsub.Subscriber;
-import com.harrison.pubsub.helpers.TestingCallback;
+import com.github.hs750.pubsub.PublishSubscribeService;
+import com.github.hs750.pubsub.Subscriber;
+import com.github.hs750.pubsub.helpers.TestingCallback;
 
 /**
  * An example of subscribing to multiple data types in one class (in this case, {@link String} and
- * {@link Integer}). It is not possible to implement {@link com.harrison.pubsub.Subscriber} twice
+ * {@link Integer}). It is not possible to implement {@link Subscriber} twice
  * with different type parameters. Instead this class has implementations of the multiple receive
  * methods it would have had but then uses them lambda method references into {@link
  * PublishSubscribeService#subscribe(Subscriber, Class)}

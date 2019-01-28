@@ -1,4 +1,4 @@
-package com.harrison.pubsub;
+package com.github.hs750.pubsub;
 
 import java.util.HashSet;
 import java.util.Set;

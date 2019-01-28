@@ -1,12 +1,14 @@
-package com.harrison.pubsub.examples;
+package com.github.hs750.pubsub.examples;
 
-import com.harrison.pubsub.PublishSubscribeService;
-import com.harrison.pubsub.PublishSubscriber;
-import com.harrison.pubsub.helpers.TestingCallback;
+import com.github.hs750.pubsub.PublishSubscribeService;
+import com.github.hs750.pubsub.PublishSubscriber;
+import com.github.hs750.pubsub.Publisher;
+import com.github.hs750.pubsub.Subscriber;
+import com.github.hs750.pubsub.helpers.TestingCallback;
 
 /**
- * An example of a class that implements both {@link com.harrison.pubsub.Publisher} and {@link
- * com.harrison.pubsub.Subscriber} (via {@link PublishSubscriber}. This class subscribes to and
+ * An example of a class that implements both {@link Publisher} and {@link
+ * Subscriber} (via {@link PublishSubscriber}. This class subscribes to and
  * publishes {@link String}s.
  */
 public class BasicPublishSubscriber implements PublishSubscriber<String> {

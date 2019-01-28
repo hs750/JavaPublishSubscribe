@@ -1,4 +1,4 @@
-package com.harrison.pubsub;
+package com.github.hs750.pubsub;
 
 /**
  * This interface is for convinience. Implementing this interface results in implementing both

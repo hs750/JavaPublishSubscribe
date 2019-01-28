@@ -1,4 +1,4 @@
-package com.harrison.pubsub;
+package com.github.hs750.pubsub;
 
 import java.util.HashMap;
 import java.util.Map;

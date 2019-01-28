@@ -1,7 +1,7 @@
-package com.harrison.pubsub;
+package com.github.hs750.pubsub;
 
-import com.harrison.pubsub.examples.SingleTypeSubscriber;
-import com.harrison.pubsub.helpers.TestingCallback;
+import com.github.hs750.pubsub.examples.SingleTypeSubscriber;
+import com.github.hs750.pubsub.helpers.TestingCallback;
 import org.junit.Test;
 
 import static org.mockito.Mockito.*;

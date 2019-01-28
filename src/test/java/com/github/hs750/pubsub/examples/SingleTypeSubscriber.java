@@ -1,8 +1,8 @@
-package com.harrison.pubsub.examples;
+package com.github.hs750.pubsub.examples;
 
-import com.harrison.pubsub.PublishSubscribeService;
-import com.harrison.pubsub.Subscriber;
-import com.harrison.pubsub.helpers.TestingCallback;
+import com.github.hs750.pubsub.PublishSubscribeService;
+import com.github.hs750.pubsub.Subscriber;
+import com.github.hs750.pubsub.helpers.TestingCallback;
 
 /**
  * An example of subscribing to a single type (in this case {@link String}).

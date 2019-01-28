@@ -1,5 +1,8 @@
 apply plugin: 'java'
 
+group 'com.github.hs750'
+version 2.0
+
 repositories {
     jcenter()
 }

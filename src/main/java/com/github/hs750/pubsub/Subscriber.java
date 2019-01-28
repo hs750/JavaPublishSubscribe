@@ -1,4 +1,4 @@
-package com.harrison.pubsub;
+package com.github.hs750.pubsub;
 
 /**
  * Implementations of this interface subscribe to a data type via the {@link
